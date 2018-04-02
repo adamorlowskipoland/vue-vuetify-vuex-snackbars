@@ -1,20 +1,17 @@
 <template>
   <v-flex>
-    <v-btn @click="openSnackbar">Read</v-btn>
+    <v-btn @click="snackbarButton">Read</v-btn>
     <v-btn to="/">Return Home</v-btn>
   </v-flex>
 </template>
 <script>
-  import { mapMutations } from 'vuex'
-
   export default {
     data () {
       return {}
     },
     methods: {
-      ...mapMutations(['showSnackbar', 'closeSnackbar']),
-      openSnackbar () {
-        this.showSnackbar({text: 'Last time You updated something!'})
+      snackbarButton () {
+        this.$emit('showSnackbar', 'You read something!')
       }
     }
   }
