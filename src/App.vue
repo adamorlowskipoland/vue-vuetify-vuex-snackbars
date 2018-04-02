@@ -9,9 +9,8 @@
       <v-container fluid>
         <v-slide-y-transition mode="out-in">
           <v-layout column align-center>
-
-            <router-view></router-view>
-
+            <snackbar-store/>
+            <router-view/>
           </v-layout>
         </v-slide-y-transition>
       </v-container>
@@ -20,9 +19,11 @@
 </template>
 
 <script>
-export default {
-  data () {
-  },
-  name: 'App'
-}
+  import snackbarStore from '@/components/SnackbarStore'
+
+  export default {
+    components: {
+      snackbarStore
+    }
+  }
 </script>
